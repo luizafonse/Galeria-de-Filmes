@@ -5,6 +5,10 @@ import express from "express";
 const router = express.Router();
 import Filme from "../models/Filme.js";
 // ROTA PRINCIPAL
+router.get("/cadastros", (req, res) => {
+  res.render("cadastros");
+});
+
 router.get("/", (req, res) => {
  Filme.findAll().then((filmes) => {
     res.render("index", {
@@ -25,5 +29,6 @@ router.post("/uploads", upload.single("file"), (req, res) => {
   });
   res.redirect("/cadastros");
 });
+
 
 export default router;

@@ -4,7 +4,7 @@ const app = express();
 import connection from "./config/sequelize-config.js";
 import Filme from "./models/Filme.js";
 import FilmesController from "./controllers/FilmesController.js";
-
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 const upload = multer({ dest: "public/uploads/" });

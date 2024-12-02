@@ -1,0 +1,45 @@
+<%- include ('partials/navbar.ejs') %>
+<%- include ('partials/header.ejs') %>
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h1>Cadastrar Filme</h1>
+      </div>
+      <div class="card-body">
+        <form action="/upload" method="post">
+          <label>Título do Filme</label>
+          <input
+          type="text"
+          name="titulo"
+          id="titulo"
+          placeholder="Insira o Título do Filme"
+          class="form-control"
+          required
+          />
+          <label>Ano de Lançamento</label>
+          <input
+          type="text"
+          name="ano"
+          id="ano"
+          placeholder="Insira o Ano de Lançamento do Filme"
+          class="form-control"
+          required
+          />
+          <label>Poster do Filme</label>
+          <input
+          type="file"
+          name="file"
+          id="file"
+          class="form-control"
+          placeholder="Insira o Poster do Filme"
+          required
+          />
+          <br />
+          <input type="submit" class="btn btn-warning" value="Cadastrar" />
+        </form>
+        <hr />
+      </div>
+    </div>
+  </div>
+  <br />
+  <%- include ('partials/footer.ejs') %>
